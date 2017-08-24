@@ -45,7 +45,7 @@ bad_people:
 * Feel Free to Add Your Own Unpleasantries to [unpleasantries.yaml](unpleasantries.yaml):
 
   * Each line will be built out as:
-    * `Good morning @<twitter_handle>, <unpleasantry>.`
+    * `Morning @<twitter_handle>, <unpleasantry>.`
   * For Example:
-    * `Good Morning @<Some_Person>, Hope you step in a scat pile of unknown origin today.`
+    * `Morning @<Some_Person>, Hope you step in a scat pile of unknown origin today.`
 
