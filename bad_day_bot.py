@@ -15,7 +15,7 @@ def load_yaml(input_file):
 
 def build_statement(unpleasantries):
     """Build your unpleasantries"""
-    base_statement = "You're awfully dishonest & terrible at your job"
+    base_statement = "You're dishonest & terrible at your job"
 
     random_unpleasantry = random.randint(0, len(unpleasantries)-1)
     joined_statement = "{0}. {1}.".format(base_statement, unpleasantries[random_unpleasantry])
@@ -27,8 +27,17 @@ def tweet(api, tweet_text, user):
     """Tweet These Terrible Cretins"""
     try:
         real_text = "Morning @{0},\n{1}".format(user, tweet_text)
-        print("{0}\n".format(real_text))
-        api.update_status(real_text)
+        tweet_length = len(real_text)
+        if tweet_length <= 140:
+            print('\nTweeting')
+            print("User: @{0}".format(user))
+            print("Message: \n{0}".format(real_text))
+            api.update_status(real_text)
+            sleep(120)
+        else:
+            print('\nTweet exceeds 140 Characters - Not Tweeting')
+            print("User: @{0}".format(user))
+            print("Message: \n{0}".format(real_text))
     except tweepy.TweepError as error:
         print(error.reason)
         sleep(2)
@@ -55,7 +64,6 @@ def main():
         index, tweet_text = build_statement(unpleasantries)
         unpleasantries.pop(index)
         tweet(api, tweet_text, user)
-        sleep(120)
 
 
 if __name__ == '__main__':

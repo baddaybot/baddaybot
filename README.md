@@ -5,6 +5,7 @@
 
 ### Prerequisite:
 
+* Twitter Account/App with OAuth Token
 * Python3
 * Virtualenv
   * Create/Activate python3 Virtualenv
@@ -14,7 +15,7 @@
 
 ### Usage:
 
-* Create file in repo base dir named: `credentials.yaml` with contents:
+* Create file in repo base dir named: `credentials.yaml` with Twitter App OAuth contents:
 
 ```yaml
 ---
